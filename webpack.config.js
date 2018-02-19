@@ -1,9 +1,8 @@
-import { dirname } from "path";
-
+const path = require('path');
 module.exports = {
-    entry: '/src/index.js',
+    entry: './src/index.js',
     output: {
-        path: dirname + '/public',
+        path: path.resolve(__dirname ,'./public'),
         filename: 'bundle.js'
     },
     module: {
