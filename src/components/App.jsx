@@ -5,13 +5,14 @@ import ContestPreview from './ContestPreview.jsx'
 class App extends Component {
     state = {
         pageHeader: 'Naming Contests',
+        contests: this.props.initialContests
     }
     render() {
         return(
             <div className="App">
                 <Header message={this.state.pageHeader}/>
                 <div>
-                {this.props.contests.map(contest => 
+                {this.state.contests.map(contest => 
                     <ContestPreview key={contest.id} {...contest}/>)}  
                 </div>
             </div>
