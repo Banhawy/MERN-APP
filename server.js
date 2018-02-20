@@ -3,6 +3,7 @@ import apiRouter from './api'
 import express from 'express'
 import sassMiddleWare from 'node-sass-middleware'
 import path from 'path'
+import serverRender from './serverRender'
 const server = express()
 
 server.use(sassMiddleWare({
@@ -13,14 +14,19 @@ server.use(sassMiddleWare({
 server.set('view engine', 'ejs')
 
 server.get('/', (req, res)=>{
-    res.render('index', {
-        content: 'Hello Express and <em>EJS!</em>'
-    })
+    serverRender()
+        .then(({initialData, initialMarkup}) => {
+            res.render('index', {
+                initialData,
+                initialMarkup
+            })
+        })
+        .catch(console.error)
 })
 
 server.use('/api', apiRouter)
 server.use(express.static('public'))
 
-server.listen(config.port, ()=>{
+server.listen(config.port, config.host, ()=>{
     console.info('Express listening on port ', config.port)
 })
