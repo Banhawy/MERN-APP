@@ -15,6 +15,7 @@
     "json-loader": "^0.5.7",
     "jsx-loader": "^0.13.2",
     "mongodb": "^3.0.2",
+    "node-sass-middleware": "^0.11.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
