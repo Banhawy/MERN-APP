@@ -12,6 +12,8 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "json-loader": "^0.5.7",
+    "jsx-loader": "^0.13.2",
     "mongodb": "^3.0.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"

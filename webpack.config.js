@@ -12,6 +12,18 @@ module.exports = {
                 use: [
                     'babel-loader'
                 ]
+            },
+            {
+                test: /.json$/,
+                use: [
+                    'json-loader'
+                ]
+            },
+            {
+                test: /.jsx$/,
+                use: [
+                    'jsx-loader'
+                ]
             }
         ]
     }
