@@ -13,8 +13,8 @@ server.use(sassMiddleWare({
 
 server.set('view engine', 'ejs')
 
-server.get('/', (req, res)=>{
-    serverRender()
+server.get(['/', '/contest/:contestId', ], (req, res)=>{
+    serverRender(req.params.contestId)
         .then(({initialData, initialMarkup}) => {
             res.render('index', {
                 initialData,
