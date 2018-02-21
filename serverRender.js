@@ -9,8 +9,8 @@ const serverRender =  () =>
 axios.get(`${config.serverUrl}/api/contests`)
     .then(res => {
         return {
-            initialMarkup: ReactDOMServer.renderToString(<App initialContests={res.data.contests}/>),
-            initialData: res.data.contests
+            initialMarkup: ReactDOMServer.renderToString(<App initialData={res.data}/>),
+            initialData: res.data
         }
     })
 
